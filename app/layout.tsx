@@ -1,17 +1,10 @@
-import { Barlow_Condensed, Geist_Mono, Inter } from "next/font/google"
+import { Geist, Geist_Mono, IBM_Plex_Sans } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-
-const pokemonDisplay = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-pokemon-display",
-  display: "swap",
-})
+const ibmPlexSans = IBM_Plex_Sans({subsets:['latin'],variable:'--font-sans'})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -25,15 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="en"
       suppressHydrationWarning
-      className={cn(
-        "antialiased",
-        fontMono.variable,
-        "font-sans",
-        inter.variable,
-        pokemonDisplay.variable
-      )}
+      className={cn("antialiased", fontMono.variable, "font-sans", ibmPlexSans.variable)}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
