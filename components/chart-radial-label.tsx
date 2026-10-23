@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState, type CSSProperties } from "react"
+import Link from "next/link"
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -136,7 +137,7 @@ export function ChartRadialLabel() {
       <div className="orbit-ambient" aria-hidden="true" />
       <div className="orbit-container">
         <header className="orbit-nav">
-          <a href="/" className="orbit-brand" aria-label="Orbit, inicio">
+          <a href="/dashboard" className="orbit-brand" aria-label="Orbit, inicio">
             <span className="orbit-brand-icon">
               <Orbit size={24} strokeWidth={1.6} />
             </span>
@@ -144,9 +145,17 @@ export function ChartRadialLabel() {
             <span className="orbit-brand-divider" />
             <span className="orbit-brand-caption">analytics</span>
           </a>
-          <span className="orbit-demo">
-            <span /> Datos de ejemplo
-          </span>
+          <div className="flex items-center gap-3 sm:gap-5">
+            <Link
+              href="/todos"
+              className="flex items-center gap-1 text-[11px] text-[#afb3be] transition-colors hover:text-[#d5f879]"
+            >
+              Mis tareas <ArrowUpRight size={13} />
+            </Link>
+            <span className="orbit-demo">
+              <span /> Datos de ejemplo
+            </span>
+          </div>
         </header>
 
         <section className="orbit-hero orbit-reveal">
